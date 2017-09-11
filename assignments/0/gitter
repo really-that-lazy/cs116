@@ -1,0 +1,6 @@
+#!/bin/bash
+
+geany a00q4.py &
+qpdfview a00.pdf &
+
+exit 0
