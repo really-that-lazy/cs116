@@ -1,0 +1,6 @@
+#!/bin/bash
+
+qpdfview A01.pdf &
+geany a01interface.py gitter &
+
+exit 0

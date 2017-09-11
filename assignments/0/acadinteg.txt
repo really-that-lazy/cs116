@@ -54,4 +54,4 @@ policy and will comply with it throughout the term, including:
     instructor in advance for a specific assignment.
 
 Course: CS 116
-Student userid: 
+Student userid: 20400675
