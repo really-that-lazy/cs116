@@ -1,6 +1,6 @@
 #!/bin/bash
 
-geany a00q4.py &
+geany a00q4.py acadinteg.txt gitter &
 qpdfview a00.pdf &
 
 exit 0
