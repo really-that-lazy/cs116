@@ -1,6 +1,6 @@
 #!/bin/bash
 
 qpdfview A01.pdf &
-geany a01interface.py gitter &
+geany a01interface.py a01q1.py a01q2.py a01q3.py a01q4.py gitter &
 
 exit 0
