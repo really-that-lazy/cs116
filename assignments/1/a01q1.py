@@ -1,33 +1,17 @@
 # Question 1:
+import math
 
+def quotient(a, b):
+	return a//b;
+
+## f1: Nat, Nat -> Nat
 def f1(x, y):
-    pass
+    return quotient((y*5)**2, x)
 
+## f2: Nat, Nat -> Int
 def f2(a, b):
-    pass
+    return ((a+b)**(a%10))
 
+## f3: Nat -> Num
 def f3(n):
-    pass
-
-
-# Question 2:
-
-def normal_distribution(x, mean, std_dev):
-    pass
-
-
-# Question 3: 
-
-def forever_15(n):
-    pass
-
-
-# Question 4:
-
-# You may Not use max or min or conditions in Python
-# You are not allowed to import math module for this question. 
-# Only simple mathematical operations such as * - + /   %  //  abs can be used.
-
-def min3(a, b, c):
-    pass
-
+    return ((math.sqrt(2*math.pi*n))*((n/math.e)**(n-1)))
