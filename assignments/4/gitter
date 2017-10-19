@@ -1,6 +1,6 @@
 #!/bin/bash
 
-geany a04q1.py a04q2.py a04q3.py &
+geany a04q1.py a04q2.py a04q3.py gitter &
 qpdfview A04.pdf &
 
 exit 0

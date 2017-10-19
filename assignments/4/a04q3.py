@@ -1,38 +1,5 @@
-
-## Question 1
-
-def create_odds(target):
-    pass
-
-def build_special_list(n):
-    pass
-
-
-def divisibles(n):
-    pass
-
-
-def update_list(nlst, val, newval):
-    pass
-
-def mult_list (m1, m2):
-    pass
-
-## Question 2
-
-## contants for testing
-tweet1 = "#1:-@DanClark:-The party was amazing" 
-tweet19 = "#19:-@NatalyS:-Avoid 401 Toronto area at this time" 
-tweet50 = "#50:-@CBCNews:-How Canadian captain gave her team a speech" 
-tweet14 = "#14:-@DanClark:-The food was good"
-tweet15 = "#15:-@DaveLin:-Lucky you DanClark"
-tweets =   [tweet1, tweet19, tweet50, tweet14, tweet15]
-
-def search_tweets(tweets, tweeter):
-    pass
-
-
 ## Question 3
+import check
 
 ## A keycode is a list of length 2, [d, n] where
 ##   d is an int from 0 - 9 representing a digit on a phone keypad and
@@ -40,6 +7,64 @@ def search_tweets(tweets, tweeter):
 ##        been pressed. The value of n will be less than or equal to
 ##        the number of symbols associated with d on a phone.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## translateKeycodeToCharacterString takes a keycode and translates it to a
+## single character string in the same way that a numeric keypad
+## can be used in English speaking countries to type text.
+
+## translateKeycodeToCharacterString: keycode -> Str
+
+## the values of d & n in keycode must correspond to valid indexes d & n-1 in
+## the 2d list responses defined below 
+
+## ie
+## translateKeycodeToCharacterString([1, 3]) => '?'
+
+def translateKeycodeToCharacterString(someKeycode):
+	responses = [[' '], ['.', ',', '?'], ['a', 'b', 'c'], ['d', 'e', 'f'], ['g', 'h', 'i'], ['j', 'k', 'l'], ['m', 'n', 'o'], ['p', 'q', 'r', 's'], ['t', 'u', 'v'], ['w', 'x', 'y', 'z']]
+	return responses[someKeycode[0]][someKeycode[1]-1]
+
+
+
+if(__name__ == "__main__"):
+
+	check.expect("translateKeycodeToCharacterString([9, 4])", translateKeycodeToCharacterString([9, 4]), 'z')
+	check.expect("compose_msg([0, 1])", translateKeycodeToCharacterString([0, 1]), ' ')
+	check.expect("compose_msg([1, 3])", translateKeycodeToCharacterString([1, 3]), '?')
+
+
+
+
+## compose_msg takes a list of keycodes and translates each one into a
+## corresponding single character string in the same way that a numeric keypad
+## can be used in English speaking countries to type text. Once a list of
+## single output characters has been formed, theyre all appended together and
+## returned
+
+
+## compose_msg: Listof(keycode) -> Str
+
 def compose_msg(keypresses):
-    pass
-    
+	outputCharacters = list(map(lambda someKeycode: translateKeycodeToCharacterString(someKeycode), keypresses))
+	## ie keypresses = [[6, 3], [0, 1], [5, 2]] -> ['o', ' ', 'k']
+	return "".join(outputCharacters)
+	## stitch them all together as one big list and return them
+
+
+if(__name__ == "__main__"):
+
+	check.expect("compose_msg([[6, 3], [0, 1], [5, 2]])", compose_msg([[6, 3], [0, 1], [5, 2]]), 'o k')
+	check.expect("compose_msg([[0, 1], [9, 2], [0, 1]])", compose_msg([[0, 1], [9, 2], [0, 1]]), ' x ')
+	check.expect("compose_msg([])", compose_msg([]), '')
