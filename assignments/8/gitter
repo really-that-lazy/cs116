@@ -1,0 +1,6 @@
+#!/bin/bash
+
+geany a08q1.py a08q2.py a08q3.py gitter &
+qpdfview A08.pdf &
+
+exit 0
